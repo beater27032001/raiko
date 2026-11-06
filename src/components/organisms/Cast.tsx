@@ -5,8 +5,12 @@ import { motion } from 'motion/react'
 import { EASE } from '@constants/motion'
 import { CAST, type Character } from '@domain/story'
 import { cn } from '@lib/utils'
+import { KaitoBust, MioBust, RaizoBust } from '@molecules/art/figures'
+
+const BUST = { lines: KaitoBust, dark: MioBust, tone: RaizoBust } as const
 
 function Portrait({ c }: { c: Character }) {
+  const Bust = BUST[c.look]
   return (
     <div
       className={cn(
@@ -15,26 +19,14 @@ function Portrait({ c }: { c: Character }) {
       )}
     >
       {c.look === 'lines' && <div aria-hidden className="speed-lines" />}
-      {c.look === 'dark' && <div aria-hidden className="tone tone-up invert" />}
       {c.look === 'tone' && <div aria-hidden className="tone" />}
+      <Bust />
       <span
         lang="ja"
-        className="absolute top-3 left-3 border-2 border-ink bg-paper px-1 py-1.5 text-[15px] font-black [writing-mode:vertical-rl]"
+        className="absolute top-3 left-3 z-10 border-2 border-ink bg-paper px-1 py-1.5 text-[15px] font-black [writing-mode:vertical-rl]"
       >
         {c.japanese}
       </span>
-      <motion.span
-        aria-hidden
-        className={cn(
-          'absolute right-3 -bottom-3.5 font-display text-[150px] leading-none [-webkit-text-stroke:4px_var(--color-ink)] [paint-order:stroke_fill]',
-          c.look === 'dark' ? 'text-red' : 'text-paper',
-        )}
-        // sobe junto com o card (que mede a visibilidade); o retrato corta o excesso
-        variants={{ hidden: { y: '40%' }, show: { y: 0 } }}
-        transition={{ duration: 0.7, ease: EASE }}
-      >
-        {c.kanji}
-      </motion.span>
     </div>
   )
 }
