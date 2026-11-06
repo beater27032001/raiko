@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #fbfbf8;
+  --color-ink: #0d0d0d;
+  --color-red: #e3262e;
+  --color-tone: #cfcfca;
+  --color-muted: #5e5e5a;
+  --color-gray: #8a8a86;
+  /* variáveis do next/font, definidas no <html> pelo layout */
+  --font-display: var(--font-dela), 'Hiragino Sans', 'Arial Black', sans-serif;
+  --font-body:
+    var(--font-zen), 'Hiragino Sans', 'Noto Sans JP', system-ui, sans-serif;
+}
+
+@utility wrap {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-red);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-red);
+    color: var(--color-paper);
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
