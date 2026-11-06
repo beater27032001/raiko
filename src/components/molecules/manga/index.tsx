@@ -76,7 +76,7 @@ export function Narration({
 }) {
   return (
     <p
-      className="absolute z-[2] m-0 max-w-[62%] border-2 border-ink bg-paper px-2 py-1.5 text-[clamp(11px,1.5vh,14px)] leading-[1.4] font-medium"
+      className="absolute z-[2] m-0 max-w-[62%] border-2 border-ink bg-paper px-2 py-1.5 text-[clamp(11px,1.5vh,14px)] leading-[1.4] font-medium text-ink"
       style={style}
     >
       {children}
@@ -93,7 +93,7 @@ export function Bubble({
 }) {
   return (
     <motion.p
-      className="bubble absolute z-[2] m-0 max-w-[70%] rounded-[50%] border-[2.5px] border-ink bg-white px-[18px] py-3 text-center text-[clamp(12px,1.7vh,16px)] leading-[1.3] font-bold"
+      className="bubble absolute z-[2] m-0 max-w-[70%] rounded-[50%] border-[2.5px] border-ink bg-white px-[18px] py-3 text-center text-[clamp(12px,1.7vh,16px)] leading-[1.3] font-bold text-ink"
       style={style}
       initial={{ scale: 0.6, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
