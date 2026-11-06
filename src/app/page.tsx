@@ -1,3 +1,4 @@
+import { Chapter } from '@organisms/Chapter'
 import { Cover } from '@organisms/Cover'
 import { MotionProvider } from '@providers/MotionProvider'
 import { SmoothScroll } from '@providers/SmoothScroll'
@@ -7,6 +8,7 @@ export default function Home() {
     <MotionProvider>
       <SmoothScroll>
         <Cover />
+        <Chapter />
       </SmoothScroll>
     </MotionProvider>
   )
