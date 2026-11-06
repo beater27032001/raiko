@@ -1,3 +1,15 @@
+import { MioStanding, SparkHand } from '@molecules/art/figures'
+import {
+  Forge,
+  Grip,
+  PowerLines,
+  Puddle,
+  RiceBike,
+  Stairs,
+  SwordInStone,
+  Torii,
+  Village,
+} from '@molecules/art/scenes'
 import {
   Bubble,
   Narration,
@@ -8,12 +20,12 @@ import {
   Tone,
 } from '@molecules/manga'
 
+/** 1 · A vila na tempestade e o título do capítulo. */
 export function Page1() {
   return (
     <Page number={1} template="1fr / 1fr">
       <Panel>
-        <SpeedLines />
-        <Tone style={{ opacity: 0.5 }} />
+        <Village />
         <Sfx
           size="clamp(40px,8vh,84px)"
           rotate={-6}
@@ -21,7 +33,7 @@ export function Page1() {
         >
           ゴロゴロ
         </Sfx>
-        <Narration style={{ left: 12, top: '34%' }}>
+        <Narration style={{ left: 12, top: '30%' }}>
           Na vila de Kumoyama, ninguém olha para cima durante as tempestades.
         </Narration>
         <div className="absolute inset-x-0 bottom-0 z-[2] border-t-[3px] border-ink bg-paper p-4">
@@ -37,12 +49,79 @@ export function Page1() {
   )
 }
 
+/** 2 · Kaito e a última entrega da noite. */
 export function Page2() {
   return (
-    <Page number={2} template="1fr 1.1fr 1.3fr / 1fr">
+    <Page number={2} template="1fr 1.2fr 0.9fr / 1fr">
+      <Panel>
+        <RiceBike />
+        <Narration style={{ left: 8, top: 8 }}>
+          Kaito Arashi, 16 anos. Entrega arroz desde os doze.
+        </Narration>
+      </Panel>
+      <Panel>
+        <Stairs />
+        <Bubble style={{ right: '6%', top: '10%' }}>
+          Trezentos degraus…
+          <br />
+          numa tempestade.
+        </Bubble>
+      </Panel>
+      <Panel>
+        <Puddle />
+        <Sfx
+          size="clamp(30px,5.5vh,56px)"
+          rotate={-4}
+          style={{ left: '6%', bottom: '10%' }}
+        >
+          ザァァ
+        </Sfx>
+      </Panel>
+    </Page>
+  )
+}
+
+/** 3 · O santuário e a espada presa na pedra. */
+export function Page3() {
+  return (
+    <Page number={3} template="1.3fr 1fr / 1fr 1fr">
+      <Panel style={{ gridColumn: '1 / -1' }}>
+        <Torii />
+        <Bubble style={{ left: '6%', top: '8%' }}>
+          Entrega do arroz!
+          <br />
+          …Tem alguém aí?
+        </Bubble>
+      </Panel>
+      <Panel>
+        <SwordInStone />
+        <Sfx
+          size="clamp(26px,4.5vh,44px)"
+          rotate={8}
+          style={{ right: '6%', top: '8%' }}
+        >
+          ジジ…
+        </Sfx>
+      </Panel>
       <Panel>
         <Tone />
-        <Narration style={{ right: 10, bottom: 10 }}>Kaito olhou.</Narration>
+        <Narration style={{ left: 8, bottom: 8 }}>
+          No altar, uma espada presa à pedra. E ela estava vibrando.
+        </Narration>
+      </Panel>
+    </Page>
+  )
+}
+
+/** 4 · Kaito olha para cima. */
+export function Page4() {
+  return (
+    <Page number={4} template="1fr 1.1fr 1.3fr / 1fr">
+      <Panel>
+        <Tone />
+        <Narration style={{ right: 10, bottom: 10 }}>
+          Kaito olhou para cima.
+        </Narration>
       </Panel>
       <Panel>
         <SpeedLines />
@@ -92,9 +171,10 @@ export function Page2() {
   )
 }
 
-export function Page3() {
+/** 5 · O raio. */
+export function Page5() {
   return (
-    <Page number={3} template="1fr / 1fr">
+    <Page number={5} template="1fr / 1fr">
       <Panel>
         <SpeedLines />
         <svg
@@ -137,9 +217,38 @@ export function Page3() {
   )
 }
 
-export function Page4() {
+/** 6 · Depois do raio, ele passa a ouvir a eletricidade. */
+export function Page6() {
   return (
-    <Page number={4} template="1fr 1.25fr 1fr / 1fr 1fr">
+    <Page number={6} template="1fr 1.25fr / 1fr">
+      <Panel>
+        <SparkHand />
+        <Narration style={{ right: 8, top: 8 }}>
+          Ele acordou com a chuva no rosto. E com um zumbido.
+        </Narration>
+      </Panel>
+      <Panel>
+        <PowerLines />
+        <Sfx
+          size="clamp(34px,6.5vh,64px)"
+          rotate={-6}
+          style={{ left: '6%', top: '30%' }}
+        >
+          ブーン
+        </Sfx>
+        <Bubble style={{ right: '6%', top: '30%' }}>
+          Que barulho
+          <br />é esse?!
+        </Bubble>
+      </Panel>
+    </Page>
+  )
+}
+
+/** 7 · Mio aparece. */
+export function Page7() {
+  return (
+    <Page number={7} template="1fr 1.25fr 1fr / 1fr 1fr">
       <Panel style={{ gridColumn: '1 / -1' }}>
         <Tone />
         <Bubble style={{ right: '8%', top: '14%' }}>
@@ -200,9 +309,101 @@ export function Page4() {
   )
 }
 
-export function Page5() {
+/** 8 · O confronto. */
+export function Page8() {
   return (
-    <Page number={5} template="1fr / 1fr">
+    <Page number={8} template="1.5fr 1fr / 1fr 1fr">
+      <Panel style={{ gridColumn: '1 / -1' }}>
+        <SpeedLines />
+        <MioStanding />
+        <Bubble style={{ left: '5%', top: '10%' }}>
+          A Raikō escolheu você.
+          <br />
+          Isso é um problema.
+        </Bubble>
+        <Sfx
+          size="clamp(30px,5.5vh,56px)"
+          rotate={10}
+          style={{ right: '6%', top: '8%' }}
+        >
+          バッ
+        </Sfx>
+      </Panel>
+      <Panel>
+        <Tone up />
+        <Bubble style={{ left: '8%', top: '14%' }}>
+          Eu só vim
+          <br />
+          entregar o arroz!
+        </Bubble>
+      </Panel>
+      <Panel dark>
+        <SpeedLines light />
+        <Narration style={{ left: 6, bottom: 6 }}>
+          Mio Kurogane não costuma errar o primeiro golpe.
+        </Narration>
+      </Panel>
+    </Page>
+  )
+}
+
+/** 9 · Raizō, o ferreiro. */
+export function Page9() {
+  return (
+    <Page number={9} template="1.3fr 1fr / 1fr">
+      <Panel dark>
+        <Forge />
+        <Sfx
+          size="clamp(30px,5.5vh,56px)"
+          rotate={-8}
+          style={{ left: '6%', top: '8%' }}
+        >
+          カン
+        </Sfx>
+        <Narration style={{ right: 8, bottom: 8 }}>
+          Atrás do santuário, a forja que ninguém acendia havia séculos estava
+          acesa.
+        </Narration>
+      </Panel>
+      <Panel>
+        <Tone />
+        <Bubble style={{ left: '5%', top: '10%' }}>
+          Trezentos anos esperando…
+          <br />e ela escolhe um entregador.
+        </Bubble>
+        <Bubble style={{ right: '6%', bottom: '14%' }}>Mestre Raizō?!</Bubble>
+      </Panel>
+    </Page>
+  )
+}
+
+/** 10 · A espada responde. */
+export function Page10() {
+  return (
+    <Page number={10} template="1fr / 1fr">
+      <Panel dark>
+        <SpeedLines light />
+        <Grip />
+        <Sfx
+          red
+          size="clamp(56px,11vh,120px)"
+          rotate={-6}
+          style={{ left: '6%', top: '6%' }}
+        >
+          ゴゴゴ
+        </Sfx>
+        <Narration style={{ right: 10, bottom: 10 }}>
+          A lâmina respondeu.
+        </Narration>
+      </Panel>
+    </Page>
+  )
+}
+
+/** 11 · Continua. */
+export function Page11() {
+  return (
+    <Page number={11} template="1fr / 1fr">
       <Panel className="flex flex-col items-center justify-center gap-3.5 p-5 text-center">
         <Tone up />
         <span className="relative text-[13px] font-black tracking-[.14em] text-red">
@@ -213,10 +414,10 @@ export function Page5() {
           <br />A lâmina responde
         </p>
         <a
-          href="#elenco"
+          href="#mundo"
           className="relative border-[2.5px] border-ink bg-red px-[18px] py-2.5 font-black text-paper no-underline shadow-[4px_4px_0_var(--color-ink)] transition-transform hover:-translate-y-0.5"
         >
-          Conheça o elenco ↓
+          Conheça o mundo ↓
         </a>
       </Panel>
     </Page>

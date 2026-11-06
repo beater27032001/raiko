@@ -4,9 +4,21 @@ import { useEffect, useRef } from 'react'
 
 import { motion, useMotionValue, useScroll, useTransform } from 'motion/react'
 
-import { Page1, Page2, Page3, Page4, Page5 } from './pages'
+import {
+  Page1,
+  Page10,
+  Page11,
+  Page2,
+  Page3,
+  Page4,
+  Page5,
+  Page6,
+  Page7,
+  Page8,
+  Page9,
+} from './pages'
 
-const PAGES = 5
+const PAGES = 11
 
 /** Capítulo 1: o scroll vertical move a faixa de páginas, lida da direita para a esquerda. */
 export function Chapter() {
@@ -69,6 +81,12 @@ export function Chapter() {
           style={{ x }}
           className="flex w-max gap-[18px] px-5 pt-[58px] pb-[30px] md:gap-7 md:px-10 md:pt-16 md:pb-8"
         >
+          <Page11 />
+          <Page10 />
+          <Page9 />
+          <Page8 />
+          <Page7 />
+          <Page6 />
           <Page5 />
           <Page4 />
           <Page3 />
