@@ -7,7 +7,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const reduced = useReducedMotion()
   if (reduced) return children
   return (
-    <ReactLenis root options={{ lerp: 0.09 }}>
+    <ReactLenis root options={{ lerp: 0.1, anchors: true }}>
       {children}
     </ReactLenis>
   )
