@@ -62,3 +62,10 @@ html.lenis body {
     transition: none !important;
   }
 }
+
+/* Letra preta com contorno de papel por fora (traço de mangá) */
+.ink-outline {
+  color: var(--color-ink);
+  -webkit-text-stroke: var(--stroke, 8px) var(--color-paper);
+  paint-order: stroke fill;
+}
