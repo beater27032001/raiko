@@ -28,7 +28,19 @@ const SHOTS: Shot[] = [
     name: 'desktop-capitulo',
     width: 1440,
     height: 900,
-    scroll: to(CHAPTER(0.62)),
+    scroll: to(CHAPTER(0.08)),
+  },
+  {
+    name: 'desktop-capitulo-mio',
+    width: 1440,
+    height: 900,
+    scroll: to(CHAPTER(0.86)),
+  },
+  {
+    name: 'desktop-mundo',
+    width: 1440,
+    height: 900,
+    scroll: to('document.querySelector("#mundo").offsetTop - 30'),
   },
   {
     name: 'desktop-elenco',
@@ -47,7 +59,7 @@ const SHOTS: Shot[] = [
     name: 'mobile-capitulo',
     width: 390,
     height: 844,
-    scroll: to(CHAPTER(0.1)),
+    scroll: to(CHAPTER(0.5)),
   },
 ]
 
