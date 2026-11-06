@@ -1,10 +1,14 @@
 # Raikō 雷光
 
-Página de lançamento de um anime fictício, apresentada como mangá. Na capa, uma sequência de 72 quadros desenhados em canvas avança com o scroll: o raio cai, o sol cresce e a lâmina corta a tela. Depois, o capítulo 1 é lido como mangá de verdade, da direita para a esquerda, com o scroll vertical movendo as páginas.
+Página de lançamento de um anime fictício, apresentada como mangá. Na capa, uma sequência de 72 quadros desenhados em canvas avança com o scroll: o raio cai, o sol cresce e a lâmina corta a tela. Depois, o capítulo 1 inteiro, em 11 páginas ilustradas, é lido como mangá de verdade, da direita para a esquerda, com o scroll vertical movendo as páginas. Todas as ilustrações são SVG desenhado à mão no estilo nanquim, e os traços se desenham na tela quando aparecem.
 
 ![Capa no último quadro](docs/desktop.png)
 
-![Capítulo 1](docs/desktop-capitulo.png)
+![Capítulo 1, páginas 1 a 3](docs/desktop-capitulo.png)
+
+![Capítulo 1, Mio e Raizō](docs/desktop-capitulo-mio.png)
+
+![O mundo de Raikō](docs/desktop-mundo.png)
 
 <p align="center">
   <img src="docs/tablet.png" alt="Tablet, capa no meio da sequência" width="46%">
@@ -19,9 +23,12 @@ Página de lançamento de um anime fictício, apresentada como mangá. Na capa, 
 ## O que tem na página
 
 - **Capa em 72 quadros**: linhas de velocidade, sol vermelho, o raio com galhos e o corte da lâmina, desenhados em canvas e escolhidos pelo progresso do scroll, com contador de quadro
-- **Capítulo 1 em cinco páginas de mangá**, lidas da direita para a esquerda: o scroll vertical move a faixa, com página atual e barra de leitura
+- **Sinopse** da série
+- **Capítulo 1 em 11 páginas de mangá**, lidas da direita para a esquerda: Kaito sobe ao santuário para a última entrega, o raio cai, ele passa a ouvir a eletricidade, Mio aparece, Raizō acende a forja e a espada responde. O scroll vertical move a faixa, com página atual e barra de leitura
+- **Ilustrações em SVG** no estilo nanquim, com retícula, hachura e vermelho de destaque, que se desenham traço a traço ao aparecer
+- **O mundo de Raikō**: a vila de Kumoyama, a lenda da espada e a linhagem Kurogane, cada um com sua ilustração
 - **Onomatopeias que estouram** ao entrar na tela, balões com rabicho, narração, retícula e linhas de velocidade
-- **Elenco** em cartões com o nome em japonês na vertical e o kanji de cada personagem subindo
+- **Elenco** com retratos desenhados de Kaito, Mio e Raizō e o nome em japonês na vertical
 - **Estreia** com a ficha da série e atalho para reler o capítulo
 - Scroll suave, inclusive nos links internos, e respeito à preferência do sistema por menos movimento (a capa já mostra o último quadro)
 
@@ -68,12 +75,13 @@ src/
 ├── app/                   layout, página e estilos globais (Next.js)
 ├── domain/
 │   ├── frames.ts          sequência da capa: semente, cena do raio e linha do tempo
-│   └── story.ts           elenco, frase de capa e ficha da estreia
+│   └── story.ts           sinopse, mundo, elenco, frase de capa e ficha da estreia
 ├── lib/drawFrame.ts       desenha um quadro da capa no canvas
 ├── providers/             scroll suave e configuração do Motion
 ├── components/
 │   ├── molecules/manga/   Page, Panel, Bubble, Narration, Sfx, SpeedLines, Tone
-│   └── organisms/         Cover, Chapter (páginas 1 a 5), Cast, Release, Footer
+│   ├── molecules/art/     ilustrações em SVG: Art/Ink/Fill (traço que se desenha), cenas e personagens
+│   └── organisms/         Cover, Synopsis, Chapter (páginas 1 a 11), World, Cast, Release, Footer
 ├── lib/                   utilitário cn
 └── constants/             curvas de animação
 ```
