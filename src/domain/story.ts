@@ -1,6 +1,40 @@
 export const TAGLINE =
   'O relâmpago escolheu um herdeiro. Ele não queria ser escolhido.'
 
+export const SYNOPSIS = [
+  'Em Kumoyama, uma vila presa entre montanhas, ninguém olha para cima durante as tempestades. Dizem que o céu procura alguém.',
+  'Kaito Arashi, 16 anos, entrega arroz de bicicleta e tem medo de altura. Numa noite de tempestade, a última entrega é no santuário do alto da montanha, onde uma espada antiga está presa à pedra há trezentos anos.',
+  'O raio cai. Kaito sobrevive e passa a ouvir a eletricidade nas coisas. A guardiã do santuário quer a espada de volta, o ferreiro que a forjou ainda está vivo, e a tempestade que começou naquela noite não parece disposta a acabar.',
+]
+
+export interface WorldEntry {
+  title: string
+  japanese: string
+  text: string
+  art: 'village' | 'legend' | 'clan'
+}
+
+export const WORLD: WorldEntry[] = [
+  {
+    title: 'A vila de Kumoyama',
+    japanese: '雲山村',
+    text: 'Telhados de cerâmica, arrozais em degraus e um santuário no topo da montanha, a trezentos degraus da vila. As tempestades chegam sem aviso, e os moradores fecham as janelas e não olham para o céu.',
+    art: 'village',
+  },
+  {
+    title: 'A lenda da espada',
+    japanese: '雷光の伝説',
+    text: 'Há trezentos anos, o ferreiro Raizō forjou uma lâmina no meio de uma tempestade. O raio entrou no aço e nunca mais saiu. Desde então, a espada espera alguém que aguente segurá-la.',
+    art: 'legend',
+  },
+  {
+    title: 'A linhagem Kurogane',
+    japanese: '黒鉄家',
+    text: 'Uma família de guardiões que vigia o santuário geração após geração. Eles não escolhem quem empunha a espada: escolhem quem precisa ser impedido. Mio é a última.',
+    art: 'clan',
+  },
+]
+
 export interface Character {
   name: string
   japanese: string
