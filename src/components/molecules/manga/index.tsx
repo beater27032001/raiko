@@ -129,7 +129,8 @@ export function Sfx({
       style={{ ...style, fontSize: size }}
       initial={{ scale: 1.9, opacity: 0, rotate }}
       whileInView={{ scale: 1, opacity: 1, rotate }}
-      viewport={{ amount: 0.6 }}
+      // começa ampliada e o quadro corta o excesso: um limite alto nunca dispararia em telas estreitas
+      viewport={{ amount: 0.2 }}
       transition={{ duration: 0.55, ease: [0.2, 1.6, 0.4, 1] }}
     >
       {children}
