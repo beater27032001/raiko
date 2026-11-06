@@ -69,3 +69,59 @@ html.lenis body {
   -webkit-text-stroke: var(--stroke, 8px) var(--color-paper);
   paint-order: stroke fill;
 }
+
+/* Mangá: linhas de velocidade, retícula e balão com rabicho */
+@layer components {
+  .speed-lines {
+    position: absolute;
+    inset: -20%;
+    background: repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      var(--color-ink) 0 0.7deg,
+      transparent 0.7deg 4.5deg
+    );
+    mask-image: radial-gradient(circle at 50% 50%, transparent 22%, #000 62%);
+  }
+  .speed-lines-light {
+    background: repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      var(--color-paper) 0 0.5deg,
+      transparent 0.5deg 5deg
+    );
+  }
+  .tone {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        var(--color-ink) 1.3px,
+        transparent 1.7px
+      )
+      0 0 / 7px 7px;
+    mask-image: linear-gradient(180deg, #000, transparent 85%);
+    opacity: 0.85;
+  }
+  .tone-up {
+    mask-image: linear-gradient(0deg, #000, transparent 80%);
+  }
+  .bubble::after,
+  .bubble::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-bottom: 0;
+  }
+  .bubble::after {
+    bottom: -14px;
+    left: 30%;
+    border-width: 16px 10px 0;
+    border-color: var(--color-ink) transparent transparent;
+  }
+  .bubble::before {
+    bottom: -9px;
+    left: calc(30% + 3px);
+    z-index: 1;
+    border-width: 12px 7px 0;
+    border-color: #fff transparent transparent;
+  }
+}
